@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Models\Tecnico;
 use App\Models\TecnicoDao;
 use App\Models\CboDao;
+use App\Models\RacaCorDao;
 use App\Models\Notifications;
 
 
@@ -15,9 +16,6 @@ class TecnicoController extends Notifications
 
     public function Listar()
     {
-        $cboDao = new CboDao();
-        $cbo = $cboDao->Listar();
-
         $tecDao = new TecnicoDao();
         $ret = $tecDao->ListarTodos();
         require_once "Views/Painel/Index.php";
@@ -29,6 +27,10 @@ class TecnicoController extends Notifications
     {
         $TppDao = new CboDao();
         $tpp = $TppDao->listar();
+
+        $rcDao = new RacaCorDao();
+        $rc = $rcDao->listarTodos();
+
         $id = "";
         if ($_GET && isset($_GET['id'])) {
             $id = $_GET['id'];

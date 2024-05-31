@@ -51,12 +51,25 @@
             </div>
 <!-- raça e cor  -->
             <div class="box-6">
-                <label for="">Cor da pele</label>
+                <label for="">Raça/Cor</label>
                 <select name="raca_cor" id="" class="">
-                    <option value="">Escoha uma opção...</option>
+                <?php
+                    if($id == ''){echo "<option value='' selected> Escolha uma opção... </option>";}
+                    if (isset($rc) && count($rc) > 0) {
+                        
+                        foreach ($rc as $dados) {
+                            if (isset($id) && $id != '' && $return[0]->RACACOR == $dados->ID) {
+                                echo "<option value='{$dados->ID}' selected>" . $Formater->formataTextoCap($dados->DESCRICAO) . " </option>";
+                            } else {
+                                echo "<option value='{$dados->ID}'>" . $Formater->formataTextoCap($dados->DESCRICAO) . " </option>";
+                            }
+                        }
+                    }
+                    ?>
+                    <!-- <option value="">Escoha uma opção...</option>
                     <option value="1">Branco</option>
                     <option value="2">Negro</option>
-                    <option value="3">Pardo</option>
+                    <option value="3">Pardo</option> -->
                 </select>
             </div>
 

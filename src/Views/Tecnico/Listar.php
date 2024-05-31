@@ -31,6 +31,7 @@
         <tbody>
             <form action="" method="POST" class="bg-p3-paper">
                 <?php
+                // echo "<pre>";var_dump($ret); echo "<pre>";
                 if (isset($ret) && count($ret) > 0) {
                     foreach ($ret as $dados) { ?>
                         <tr class="zebra">
@@ -38,19 +39,15 @@
                             <td class="pd-l-1 fonte12 espaco-letra txt-e"><?php echo $Formater->formatarData($dados->DATA_NASCIMENTO); ?></td>
                             <td class="pd-l-1 fonte12 espaco-letra txt-e"><?php echo $dados->RACA_COR; ?></td>
                             <td class="pd-l-1 fonte12 espaco-letra txt-e"><?php echo $dados->SEXO; ?></td>
-
-                            <?php
-                            if (count($cbo) > 0) {
-                                foreach ($cbo as $valor) {
-                                    if ($valor->ID === $dados->CBO) { ?>
-                                        <td class="pd-l-1 fonte12 espaco-letra txt-e"><?php echo $valor->NOME; ?></td>
-
-                            <?php }
-                                }
-                            }  ?>
-
+                            <td class="pd-l-1 fonte12 espaco-letra txt-e"><?php echo $dados->CBO; ?></td>
                             <td class="pd-l-1 fonte12 espaco-letra txt-e"><?php echo $Formater->formatarData($dados->DATA_INCLUSAO); ?></td>
-                            <td class="pd-l-1 fonte12 espaco-letra txt-e"><?php echo $Formater->formatarData($dados->DATA_EXCLUSAO); ?></td>
+                            <?php if($dados->ATIVO == 1):
+                                     $dados->DATA_EXCLUSAO = '99-99-9999';
+                            ifelse: $Formater->formatarData($dados->DATA_EXCLUSAO);
+                            endif;
+
+                            ?>
+                            <td class="pd-l-1 fonte12 espaco-letra txt-e"><?php echo $dados->DATA_EXCLUSAO; ?></td>
                             <td class="pd-l-1 fonte12 espaco-letra txt-e"><?php echo $dados->ATIVO; ?></td>
                             <td class="pd-l-1 fonte12 espaco-letra txt-e flex justify-center item-centro">
                                 <a href="index.php?controller=TecnicoController&metodo=DeleteConfirm&id=<?php echo $dados->ID ?>"> <i class="fa-solid fa-trash-can fonte14 fnc-tomato mg-r-2"></i> </a>
