@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Controllers;
+
 use App\Models\Usuario;
 use App\Models\PerfilDao;
 use App\Models\UsuarioDao;
@@ -9,7 +10,7 @@ use App\Models\Notifications;
 
 class UsuarioController extends Notifications
 {
-    
+
     // Função responsavel por buscar todos os usuários cadastrados no banco de dados
 
     public function Listar()
@@ -90,9 +91,12 @@ class UsuarioController extends Notifications
                 }
                 $usuario->set($chave, $valor);
             }
+            // echo "<pre>";
+            // var_dump($usuario);
+            // echo "<pre>";
             $usuDao = new UsuarioDao();
             $ret = $usuDao->Adicionar($usuario);
-           echo $this->Success("Usuario", "Cadastrado", "Listar");
+            //echo $this->Success("Usuario", "Cadastrado", "Listar");
         }
     }
 
@@ -155,5 +159,4 @@ class UsuarioController extends Notifications
         session_destroy();
         header("location:index.php");
     }
-    
 }

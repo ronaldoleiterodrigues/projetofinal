@@ -79,7 +79,7 @@
                     <img id='foto' class='img-visivel mg-b-2 mg-t-2' src='lib/img/users-images/user-padrao.png' />
                 <?php } ?>
             </div>
-            <div class="box-12"><input type="submit" value="Cadastrar" class="btn-100 bg-p2-azul bg-p4-powder-hover fnc-branco"> </div>
+            <div class="box-12"><input type="submit" value="Cadastrar" class="btn btn-borda-azul fnc-preto-1 fw-600"> </div>
 
         </form>
     </div>

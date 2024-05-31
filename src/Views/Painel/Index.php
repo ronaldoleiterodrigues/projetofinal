@@ -20,7 +20,7 @@
 
             <li class="mg-b-1 pd-b-1">
                 <i class="fa-solid fa-user-doctor fonte16 fnc-cinza-claro"></i>
-                <a href="index.php?controller=UsuarioController&metodo=Listar" class="pd-10 fonte12 fnc-cinza-claro espaco-letra fonte-fredoca mg-l-1">Tecnico</a>
+                <a href="index.php?controller=TecnicoController&metodo=Listar" class="pd-10 fonte12 fnc-cinza-claro espaco-letra fonte-fredoca mg-l-1">Tecnico</a>
             </li>
 
             <li class="mg-b-1 pd-b-1">
@@ -45,7 +45,7 @@
     </nav>
 
     <section class="box-10 bg-branco mg-t-1 shadow-down radius">
-        <div class="box-12 bg-p3-paper limpar mg-b-4 shadow-down">
+        <div class="box-12 bg-p3-paper limpar mg-b-4 mg-t-2 shadow-down">
             <ul class="flex justify-end">
                 <li>
                     <i class="fa-solid fa-house fonte24 mg-r-1"></i>

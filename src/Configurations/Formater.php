@@ -29,25 +29,25 @@ class Formater
         date_default_timezone_set('America/Sao_Paulo');
         return date('d/m/Y', strtotime($data));
     }
+    public function formatarDataDb($data){
+        date_default_timezone_set('America/Sao_Paulo');
+        return date('Y/m/d', strtotime($data));
+    }
 
     public function retornaHora(){
         date_default_timezone_set('America/Sao_Paulo');
         return date('H:i');
     }
 
-    public function retornaData(){
-        date_default_timezone_set('America/Sao_Paulo');
-        return date('d/m/Y');
-    }
+    // public function retornaData(){
+    //     date_default_timezone_set('America/Sao_Paulo');
+    //     return date('d/m/Y');
+    // }
 
-    public function retornaDataHora(){
-        date_default_timezone_set('America/Sao_Paulo');
-        return date('d-m-Y H:i:s');
-    }
-
-    public function QuebraDeLinha($string){
-        return $string = str_replace('.', '.<br>', $string);      
-    }
+    // public function retornaDataHora(){
+    //     date_default_timezone_set('America/Sao_Paulo');
+    //     return date('d-m-Y H:i:s');
+    // }
     public function zeroEsquerda($num, $qtde,$char){
         return $num = str_pad($num, $qtde, $char, STR_PAD_LEFT);     
     }

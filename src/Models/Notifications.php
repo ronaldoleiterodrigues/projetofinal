@@ -75,7 +75,6 @@ abstract class Notifications
            </div>";
         return $mensagem;
     }
-
     protected function Log($mensagem)
     {
         echo "<link rel='stylesheet' type='text/css'href='lib/css/aurora.css' />";

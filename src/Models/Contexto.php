@@ -10,7 +10,7 @@ class Contexto
     protected $banco;
 
     protected function __construct() {
-        $inf = "mysql:host=localhost;dbname=projeto_final";
+        $inf = "mysql:host=localhost:3307;dbname=projeto_final";
         try {
             $this->banco = new PDO($inf, "root", "",array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
             $this->banco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -93,6 +93,7 @@ class Contexto
             foreach (array_slice($atributos, 1) as $x => $atributo) {
                 $stmt->bindValue(($x+1), $objeto->get($atributo));
             }
+           // var_dump($stmt);
             $ret = $stmt->execute();
             $id = $this->banco->lastInsertId();
             $this->banco = null;
@@ -100,7 +101,9 @@ class Contexto
             if(!$ret){
                 echo "Erro ao inserir dados";
             }else{
+                var_dump($ret);
                 return $id;
+
             }
 
 

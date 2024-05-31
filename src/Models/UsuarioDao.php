@@ -8,6 +8,7 @@ class UsuarioDao extends Contexto
 {
     function __construct()
     {
+        // carrega a classe pai (Contexto) que é herdado por UsuarioDao
         parent::__construct();
     }
 
